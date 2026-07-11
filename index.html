@@ -1,0 +1,3050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Finanzas Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1707372950299550');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1707372950299550&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+  <style>
+    :root {
+      --green: #08c98a;
+      --green-dark: #06ad7a;
+      --ink: #111822;
+      --muted: #3f5756;
+      --yellow: #ffc830;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: #89e0c7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .fold {
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .fold-inner {
+      width: min(100%, 632px);
+      margin: 0 auto;
+      padding: 38px 38px 104px;
+    }
+
+    /* dobra 1 */
+    .hero {
+      min-height: 1736px;
+      background:
+        radial-gradient(circle at 92% 24%, rgba(255, 255, 255, 0.42) 0 56px, transparent 57px),
+        linear-gradient(155deg, #eff4b5 0%, #baf1d4 34%, #85e2c9 69%, #80ddbf 100%);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: -16px;
+      margin-bottom: 64px;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 13px;
+      color: #fff;
+      background: var(--green);
+      box-shadow: 0 9px 20px rgba(0, 166, 116, 0.2);
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .hero-kicker {
+      max-width: 620px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.28;
+      text-align: center;
+    }
+
+    .hero-kicker span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-title {
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 79px;
+      font-weight: 950;
+      line-height: 1.24;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .hero-copy {
+      max-width: 500px;
+      margin: 34px auto 0;
+      color: var(--muted);
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 1.36;
+      text-align: center;
+    }
+
+    .highlight {
+      display: inline-block;
+      padding: 0 17px 4px;
+      border-radius: 14px;
+      color: #1f252b;
+      background: var(--yellow);
+      font-weight: 900;
+      line-height: 1.12;
+    }
+
+    .product-image-frame {
+      position: relative;
+      width: min(122%, 705px);
+      aspect-ratio: 1.68 / 1;
+      margin: 42px 0 28px 50%;
+      transform: translateX(-50%);
+    }
+
+    .product-image-frame::before {
+      content: "";
+      position: absolute;
+      inset: 12% 10% 0;
+      border-radius: 50%;
+      background: rgba(54, 117, 108, 0.16);
+      filter: blur(18px);
+    }
+
+    .product-image {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      animation: productFloat 5.6s ease-in-out infinite;
+    }
+
+    @keyframes productFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    .budget-image-frame,
+    .module-image-frame,
+    .phone-image-frame,
+    .customer-avatar,
+    .bonus-image-frame,
+    .pricing-product-frame {
+      position: relative;
+    }
+
+    .product-image-frame::before {
+      z-index: 0;
+    }
+
+    .asset-label {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      border: 1px dashed rgba(24, 191, 139, 0.55);
+      border-radius: inherit;
+      color: #173f35;
+      background: rgba(255, 255, 255, 0.72);
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1.2;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .budget-image,
+    .module-image,
+    .video-card img,
+    .video-card video,
+    .phone-image,
+    .customer-avatar img,
+    .bonus-image,
+    .pricing-product {
+      position: relative;
+      z-index: 2;
+    }
+
+    .customer-avatar .asset-label {
+      padding: 4px;
+      border-radius: 50%;
+      font-size: 8px;
+      line-height: 1.1;
+      word-break: break-word;
+    }
+
+    .video-card .asset-label {
+      inset: 22px 22px auto;
+      z-index: 3;
+      display: block;
+      border-radius: 8px;
+      color: #fff;
+      background: rgba(17, 24, 32, 0.72);
+    }
+
+    .features {
+      position: relative;
+      width: calc(100% + 96px);
+      height: 118px;
+      margin: 0 0 0 50%;
+      overflow: hidden;
+      transform: translateX(-50%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      min-height: 72px;
+      gap: 11px;
+    }
+
+    .feature-icon {
+      flex: 0 0 auto;
+      width: 76px;
+      height: 62px;
+      color: #354748;
+    }
+
+    .feature-title {
+      display: block;
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .feature-text {
+      display: block;
+      margin-top: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .money-lines {
+      font-size: 15px;
+      font-weight: 950;
+      line-height: 1.55;
+      white-space: nowrap;
+    }
+
+    .money-lines span {
+      display: block;
+    }
+
+    .floating-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      gap: 34px;
+      height: 100%;
+      animation: floatingMarquee 22s linear infinite;
+      will-change: transform;
+    }
+
+    .floating-image-slot {
+      position: relative;
+      flex: 0 0 142px;
+      height: 92px;
+      animation: floatingBob 4.5s ease-in-out infinite;
+    }
+
+    .floating-image-slot:nth-child(2n) {
+      animation-delay: -1.4s;
+    }
+
+    .floating-image-slot:nth-child(3n) {
+      animation-delay: -2.3s;
+    }
+
+    .floating-image-slot img {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .floating-image-slot .asset-label {
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.64);
+    }
+
+    @keyframes floatingMarquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 17px));
+      }
+    }
+
+    @keyframes floatingBob {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 488px);
+      min-height: 98px;
+      gap: 15px;
+      margin: 36px auto 0;
+      border-radius: 19px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--green-dark), var(--green));
+      box-shadow: 0 18px 32px rgba(10, 177, 129, 0.25);
+      font-size: 32px;
+      font-weight: 950;
+      text-align: center;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 38px rgba(10, 177, 129, 0.32);
+    }
+
+    .cta svg {
+      width: 31px;
+      height: 31px;
+      stroke-width: 3.3;
+    }
+
+    .cta-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero .cta {
+      width: min(100%, 360px);
+      min-height: 70px;
+      gap: 10px;
+      border-radius: 11px;
+      font-size: 19px;
+      white-space: nowrap;
+    }
+
+    .hero .cta svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* dobra 2 */
+    .benefits-section {
+      min-height: 2048px;
+      background:
+        linear-gradient(180deg, #fff 0%, #fff 85%, #effff8 100%);
+    }
+
+    .benefits-inner {
+      width: min(100%, 512px);
+      padding: 107px 31px 72px;
+    }
+
+    .section-eyebrow {
+      max-width: 430px;
+      margin: 0 auto 18px;
+      color: #7e8494;
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 1.42;
+      text-align: center;
+    }
+
+    .benefits-title {
+      max-width: 472px;
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: 49px;
+      font-weight: 950;
+      line-height: 1.12;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .benefits-subtitle {
+      max-width: 462px;
+      margin: 25px auto 0;
+      color: #7e8494;
+      font-size: 27px;
+      font-weight: 600;
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .benefits-list {
+      display: grid;
+      gap: 21px;
+      margin: 89px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .benefit-card {
+      display: flex;
+      align-items: center;
+      min-height: 79px;
+      gap: 18px;
+      padding: 18px 20px;
+      border-radius: 15px;
+      background: #f5faf8;
+      color: #222832;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .check-icon {
+      display: grid;
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #18bf8b;
+    }
+
+    .check-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke-width: 3;
+    }
+
+    .budget-preview {
+      width: calc(100% + 28px);
+      margin: 65px 0 0 50%;
+      padding: 26px 11px 10px;
+      border-radius: 18px;
+      background: #1b1b1c;
+      box-shadow: 0 26px 60px rgba(12, 200, 139, 0.18);
+      transform: translateX(-50%);
+      overflow: hidden;
+    }
+
+    .budget-preview.image-only {
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
+    }
+
+    .budget-preview-title {
+      margin: 0;
+      color: #fff;
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .budget-tags {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 22px 0 20px;
+      color: #fff;
+      font-size: 8px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .budget-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-check {
+      display: grid;
+      width: 14px;
+      height: 14px;
+      place-items: center;
+      border-radius: 50%;
+      color: #171717;
+      background: #fff;
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    .budget-image-frame {
+      width: 100%;
+      min-height: 211px;
+      border-radius: 2px;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+
+    .budget-preview.image-only .budget-image-frame {
+      min-height: 260px;
+      border-radius: 18px;
+    }
+
+    .budget-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* dobra 3 */
+    .modules-section {
+      min-height: 1694px;
+      background: #12171e;
+    }
+
+    .modules-inner {
+      width: min(100%, 632px);
+      padding: 132px 29px 90px;
+    }
+
+    .module-heading {
+      max-width: 570px;
+      margin: 0 auto;
+      color: #fff;
+      font-size: 48px;
+      font-weight: 950;
+      line-height: 1.18;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .module-heading + .module-card,
+    .module-heading + .module-full-image-frame {
+      margin-top: 75px;
+    }
+
+    .module-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
+      width: 100%;
+      min-height: 420px;
+      border-radius: 30px;
+      background: #1f1f20;
+      box-shadow: 0 18px 0 rgba(31, 38, 45, 0.62), 0 32px 42px rgba(0, 0, 0, 0.24);
+      overflow: hidden;
+    }
+
+    .module-card.card-savings {
+      margin-top: 75px;
+      grid-template-columns: minmax(0, 245px) minmax(0, 1fr);
+    }
+
+    .module-content {
+      position: relative;
+      z-index: 1;
+      padding: 37px 0 28px 34px;
+      color: #fff;
+    }
+
+    .module-title {
+      margin: 0 0 29px;
+      color: #fff;
+      font-size: 33px;
+      font-weight: 950;
+      line-height: 1.18;
+      white-space: nowrap;
+    }
+
+    .card-savings .module-title {
+      margin-left: 110px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .module-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #f0f1f3;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.18;
+      white-space: nowrap;
+    }
+
+    .module-list li {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .module-check {
+      display: grid;
+      flex: 0 0 auto;
+      width: 15px;
+      height: 15px;
+      place-items: center;
+      border-radius: 50%;
+      color: #1f1f20;
+      background: #fff;
+      font-size: 11px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .module-image-frame {
+      align-self: end;
+      width: 100%;
+      height: 339px;
+      margin-top: 94px;
+      background: #f8fafc;
+      overflow: hidden;
+      box-shadow: -9px 0 20px rgba(0, 0, 0, 0.22);
+    }
+
+    .card-savings .module-image-frame {
+      height: 333px;
+      margin-top: 94px;
+    }
+
+    .module-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left top;
+    }
+
+    .module-full-image-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 574 / 420;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .module-full-image {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .module-spacer-heading {
+      margin-top: 264px;
+    }
+
+    /* dobra 4 */
+    .functions-section {
+      min-height: 2048px;
+      background: #fff;
+    }
+
+    .functions-inner {
+      width: min(100%, 384px);
+      padding: 58px 21px 0;
+    }
+
+    .functions-eyebrow {
+      margin: 0 0 9px;
+      color: #18bf8b;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .functions-title {
+      max-width: 333px;
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: 34px;
+      font-weight: 950;
+      line-height: 1.14;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .down-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .video-card {
+      position: relative;
+      width: 100%;
+      margin-top: 49px;
+      border-radius: 12px;
+      background: #d7d7d5;
+      box-shadow: 0 18px 28px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+    }
+
+    .video-card.first-video {
+      aspect-ratio: 342 / 605;
+    }
+
+    .video-card.second-video {
+      aspect-ratio: 342 / 605;
+      margin-top: 28px;
+    }
+
+    .video-card img,
+    .video-card video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .video-card::after {
+      content: none;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.18);
+      pointer-events: none;
+    }
+
+    .play-button {
+      position: absolute;
+      z-index: 4;
+      top: 50%;
+      left: 50%;
+      display: grid;
+      width: 88px;
+      height: 88px;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      color: #fff;
+      background: #12c68b;
+      box-shadow: 0 10px 24px rgba(18, 198, 139, 0.32);
+      appearance: none;
+      cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+
+    .play-button::before {
+      content: "";
+      width: 0;
+      height: 0;
+      margin-left: 6px;
+      border-top: 16px solid transparent;
+      border-bottom: 16px solid transparent;
+      border-left: 24px solid currentColor;
+    }
+
+    .video-card.playing .play-button {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .video-caption {
+      margin: 58px 0 0;
+      color: var(--ink);
+      font-size: 24px;
+      font-weight: 950;
+      line-height: 1.18;
+      text-align: center;
+    }
+
+    .phone-image-frame {
+      width: calc(100% + 20px);
+      aspect-ratio: 364 / 501;
+      margin: 204px 0 0 -10px;
+    }
+
+    .phone-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+      animation: productFloat 5.6s ease-in-out infinite;
+    }
+
+    /* dobra 5 */
+    .access-section {
+      min-height: 1039px;
+      font-family: "Poppins", Arial, Helvetica, sans-serif;
+      background: #fff;
+    }
+
+    .access-inner {
+      width: min(100%, 632px);
+      padding: 39px 38px 76px;
+    }
+
+    .access-eyebrow {
+      margin: 0 0 25px;
+      color: #18bf8b;
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .access-title {
+      margin: 0 0 61px;
+      color: var(--ink);
+      font-size: 46px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .access-copy {
+      display: grid;
+      gap: 34px;
+      max-width: 570px;
+      color: #7e8494;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1.46;
+    }
+
+    .access-copy p {
+      margin: 0;
+    }
+
+    .access-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: min(100%, 360px);
+      min-height: 70px;
+      gap: 10px;
+      margin-top: 57px;
+      border-radius: 11px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--green-dark), var(--green));
+      box-shadow: 0 20px 34px rgba(10, 177, 129, 0.2);
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1;
+      text-align: center;
+      white-space: nowrap;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .access-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 40px rgba(10, 177, 129, 0.28);
+    }
+
+    .access-cta .arrow {
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    /* dobra 6 */
+    .testimonials-section {
+      min-height: 2048px;
+      background:
+        linear-gradient(180deg, #fff 0%, #fff 78%, #fbfffd 100%);
+    }
+
+    .testimonials-inner {
+      width: min(100%, 404px);
+      padding: 72px 24px 56px;
+    }
+
+    .testimonials-eyebrow {
+      margin: 0 0 9px;
+      color: #18bf8b;
+      font-size: 19px;
+      font-weight: 950;
+      line-height: 1.1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .testimonials-title {
+      max-width: 348px;
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: 38px;
+      font-weight: 950;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .testimonial-list {
+      display: grid;
+      gap: 26px;
+      margin-top: 55px;
+    }
+
+    .testimonial-card {
+      padding: 25px 25px 26px;
+      border: 1px solid #d9eee8;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(11, 157, 112, 0.08);
+    }
+
+    .testimonial-card h3 {
+      margin: 0 0 17px;
+      color: #171d27;
+      font-size: 23px;
+      font-weight: 950;
+      line-height: 1.18;
+    }
+
+    .testimonial-card p {
+      margin: 0;
+      color: #7e8494;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.52;
+    }
+
+    .stars {
+      display: flex;
+      gap: 5px;
+      margin-top: 20px;
+      color: #ffc527;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .customer {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 17px;
+    }
+
+    .customer-avatar {
+      flex: 0 0 auto;
+      width: 51px;
+      height: 51px;
+      border-radius: 50%;
+      background: #dfece7;
+      overflow: hidden;
+    }
+
+    .customer-avatar img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .customer-name {
+      display: block;
+      color: #1b2028;
+      font-size: 18px;
+      font-weight: 950;
+      line-height: 1.12;
+    }
+
+    .customer-date {
+      display: block;
+      margin-top: 2px;
+      color: #7e8494;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    /* dobra 7 */
+    .warning-bonus-section {
+      min-height: 2048px;
+      background: #12171e;
+    }
+
+    .warning-area {
+      background: #fff;
+      padding: 4px 31px 109px;
+    }
+
+    .warning-card {
+      width: min(100%, 468px);
+      margin: 0 auto;
+      padding: 35px 31px 33px;
+      border: 1px solid #dcece7;
+      border-radius: 20px;
+      background: #fff;
+      text-align: center;
+    }
+
+    .warning-card h2 {
+      max-width: 340px;
+      margin: 0 auto 20px;
+      color: #171d27;
+      font-size: 28px;
+      font-weight: 950;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .warning-card p {
+      margin: 0;
+      color: #7e8494;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.32;
+    }
+
+    .warning-card strong {
+      color: #6f7687;
+      font-weight: 950;
+    }
+
+    .bonus-area {
+      position: relative;
+      min-height: 1487px;
+      padding: 113px 32px 80px;
+      background: #12171e;
+      overflow: hidden;
+    }
+
+    .bonus-area::before,
+    .bonus-area::after {
+      content: "";
+      position: absolute;
+      width: 57px;
+      height: 57px;
+      border: 4px solid rgba(255, 255, 255, 0.72);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+      pointer-events: none;
+    }
+
+    .bonus-area::before {
+      top: 198px;
+      right: -28px;
+    }
+
+    .bonus-area::after {
+      right: 78px;
+      bottom: -29px;
+    }
+
+    .bonus-inner {
+      position: relative;
+      z-index: 1;
+      width: min(100%, 468px);
+      margin: 0 auto;
+    }
+
+    .bonus-kicker {
+      margin: 0;
+      color: #18bf8b;
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.24;
+    }
+
+    .bonus-image-frame {
+      width: 100%;
+      aspect-ratio: 468 / 373;
+      margin-top: 112px;
+    }
+
+    .bonus-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .bonus-title {
+      margin: 130px 0 0;
+      color: #fff;
+      font-size: 43px;
+      font-weight: 950;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .bonus-subtitle {
+      margin: 30px 0 0;
+      color: #18bf8b;
+      font-size: 34px;
+      font-weight: 950;
+      line-height: 1.18;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .bonus-list {
+      display: grid;
+      gap: 31px;
+      margin: 53px 0 0;
+      padding: 0;
+      list-style: none;
+      color: #f1f3f4;
+      font-size: 26px;
+      font-weight: 500;
+      line-height: 1.34;
+    }
+
+    .bonus-list li {
+      display: grid;
+      grid-template-columns: 33px 1fr;
+      align-items: start;
+      gap: 17px;
+    }
+
+    .bonus-check {
+      display: grid;
+      width: 33px;
+      height: 33px;
+      place-items: center;
+      border-radius: 50%;
+      color: #12171e;
+      background: #fff;
+      font-size: 20px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    /* dobra 8 */
+    .pricing-section {
+      min-height: 2048px;
+      background: #fff;
+    }
+
+    .pricing-inner {
+      width: min(100%, 416px);
+      padding: 39px 26px 58px;
+    }
+
+    .pricing-eyebrow {
+      max-width: 360px;
+      margin: 0 auto 16px;
+      color: #7e8494;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.45;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .pricing-title {
+      max-width: 330px;
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: 38px;
+      font-weight: 950;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .purchase-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 19px 22px;
+      margin: 35px auto 0;
+      color: #171d27;
+    }
+
+    .purchase-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      font-size: 14px;
+      font-weight: 950;
+      line-height: 1.1;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .purchase-badge:nth-child(n + 3) {
+      flex-basis: 100%;
+    }
+
+    .purchase-icon {
+      display: grid;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #18bf8b;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .pricing-product-frame {
+      width: 100%;
+      aspect-ratio: 364 / 248;
+      margin: 65px auto 31px;
+    }
+
+    .pricing-product {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .offer-panel {
+      scroll-margin-top: 24px;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0 16px 34px rgba(11, 157, 112, 0.12);
+      overflow: hidden;
+    }
+
+    .offer-header {
+      padding: 25px 24px 26px;
+      color: #fff;
+      background: linear-gradient(135deg, #05b478, #39d6a0);
+      text-align: center;
+    }
+
+    .offer-small {
+      display: block;
+      font-size: 19px;
+      font-weight: 850;
+      line-height: 1.55;
+      text-transform: uppercase;
+    }
+
+    .offer-headline {
+      display: block;
+      margin-top: 5px;
+      font-size: 27px;
+      font-weight: 950;
+      line-height: 1.15;
+    }
+
+    .offer-body {
+      padding: 25px 25px 30px;
+    }
+
+    .normal-price {
+      padding: 28px 18px 26px;
+      border-radius: 16px;
+      background: #f7faf9;
+      color: #7e8494;
+      text-align: center;
+    }
+
+    .normal-label,
+    .today-label {
+      display: block;
+      color: #777f90;
+      font-size: 19px;
+      font-weight: 950;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .normal-sub {
+      display: block;
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .old-price-large {
+      display: block;
+      margin-top: 6px;
+      color: #6e7484;
+      font-size: 39px;
+      font-weight: 950;
+      line-height: 1.05;
+      text-decoration: line-through;
+      text-decoration-thickness: 4px;
+    }
+
+    .bonus-note {
+      display: block;
+      margin-top: 13px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .today-price {
+      position: relative;
+      margin-top: 27px;
+      padding: 31px 18px 26px;
+      border: 2px solid #18bf8b;
+      border-radius: 17px;
+      background: linear-gradient(180deg, #f6fffb, #fff);
+      text-align: center;
+    }
+
+    .discount-badge {
+      position: absolute;
+      top: -18px;
+      right: 14px;
+      padding: 8px 15px;
+      border-radius: 16px;
+      color: #4d4b3f;
+      background: #f3cd58;
+      font-size: 14px;
+      font-weight: 950;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .today-label {
+      color: #18bf8b;
+    }
+
+    .old-price-small {
+      display: block;
+      margin-top: 14px;
+      color: #7e8494;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: line-through;
+    }
+
+    .new-price {
+      display: block;
+      margin-top: 9px;
+      color: #18bf8b;
+      font-size: 55px;
+      font-weight: 950;
+      line-height: 1.02;
+    }
+
+    .included-note {
+      display: block;
+      margin-top: 9px;
+      color: #18bf8b;
+      font-size: 14px;
+      font-weight: 950;
+    }
+
+    .checkout-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 119px;
+      gap: 16px;
+      margin-top: 35px;
+      padding: 22px 31px;
+      border-radius: 14px;
+      color: #fff;
+      background: linear-gradient(90deg, var(--green-dark), var(--green));
+      box-shadow: 0 16px 30px rgba(10, 177, 129, 0.24);
+      text-align: center;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .checkout-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 38px rgba(10, 177, 129, 0.3);
+    }
+
+    .checkout-spark {
+      flex: 0 0 auto;
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .checkout-copy {
+      display: grid;
+      gap: 8px;
+      justify-items: center;
+      font-weight: 950;
+      line-height: 1.18;
+    }
+
+    .checkout-copy strong {
+      font-size: 20px;
+      text-transform: uppercase;
+    }
+
+    .checkout-copy span {
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: lowercase;
+    }
+
+    .checkout-arrow {
+      flex: 0 0 auto;
+      font-size: 19px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .included-list-wrap {
+      margin-top: 34px;
+      padding: 0 0 0 2px;
+    }
+
+    .included-title {
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      gap: 11px;
+      align-items: start;
+      margin: 0 0 24px;
+      color: #171d27;
+      font-size: 23px;
+      font-weight: 950;
+      line-height: 1.1;
+    }
+
+    .included-title .title-check {
+      color: #18bf8b;
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .included-list {
+      display: grid;
+      gap: 19px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: #7e8494;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.26;
+    }
+
+    .included-list li {
+      display: grid;
+      grid-template-columns: 27px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+
+    .included-check {
+      display: grid;
+      width: 27px;
+      height: 27px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #18bf8b;
+      font-size: 16px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    /* dobra 9 */
+    .bonus-pack-section {
+      min-height: 1866px;
+      background: #fff;
+      padding: 0 0 64px;
+    }
+
+    .bonus-pack-panel {
+      width: min(100%, 552px);
+      margin: 0 auto;
+      border: 2px solid #d5f4e8;
+      border-top: 0;
+      border-radius: 0 0 34px 34px;
+      background: #fff;
+      box-shadow: 0 34px 52px rgba(18, 24, 31, 0.1);
+      overflow: hidden;
+    }
+
+    .bonus-pack-content {
+      padding: 22px 41px 0;
+    }
+
+    .bonus-pack-heading {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      align-items: start;
+      gap: 18px;
+      margin: 0 0 33px;
+      color: var(--ink);
+      font-size: 32px;
+      font-weight: 950;
+      line-height: 1.25;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .bonus-pack-heading .gift-icon {
+      color: #f2c537;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .extra-bonus-list {
+      display: grid;
+      gap: 27px;
+    }
+
+    .extra-bonus-card {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 22px;
+      min-height: 221px;
+      padding: 28px 24px 25px 28px;
+      border: 2px solid #f7e9b2;
+      border-radius: 18px;
+      background: linear-gradient(90deg, #fffaf0 0%, #fff 100%);
+    }
+
+    .extra-bonus-icon {
+      display: grid;
+      width: 76px;
+      height: 76px;
+      place-items: center;
+      border-radius: 18px;
+      color: #f2c537;
+      background: #fff3c8;
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .extra-bonus-title {
+      margin: 0;
+      color: #171d27;
+      font-size: 26px;
+      font-weight: 950;
+      line-height: 1.28;
+    }
+
+    .extra-bonus-value {
+      display: block;
+      margin-top: 19px;
+      color: #f2c537;
+      font-size: 22px;
+      font-weight: 950;
+      line-height: 1.1;
+    }
+
+    .extra-bonus-description {
+      margin: 13px 0 0;
+      color: #7e8494;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 1.32;
+    }
+
+    .bonus-total {
+      margin: 32px 0 0;
+      color: #7e8494;
+      font-size: 25px;
+      font-weight: 500;
+      line-height: 1.42;
+      text-align: center;
+    }
+
+    .bonus-total .crossed {
+      color: #6f7687;
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+    }
+
+    .bonus-total strong {
+      display: block;
+      color: #f2c537;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .payment-assurances {
+      display: grid;
+      justify-content: center;
+      gap: 31px;
+      margin: 57px auto 0;
+      padding: 0;
+      list-style: none;
+      color: #171d27;
+      font-size: 24px;
+      font-weight: 850;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+    .payment-assurances li {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      align-items: center;
+      gap: 21px;
+    }
+
+    .assurance-check {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: #18bf8b;
+      font-size: 24px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .timer-card {
+      margin: 63px auto 0;
+      padding: 47px 26px 45px;
+      border-radius: 22px;
+      background: #fff;
+      box-shadow: 0 15px 42px rgba(18, 24, 31, 0.06);
+      text-align: center;
+    }
+
+    .timer-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto 36px;
+      color: #171d27;
+      font-size: 30px;
+      font-weight: 950;
+      line-height: 1.5;
+    }
+
+    .timer-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 230px;
+      margin: 0 auto;
+      gap: 10px;
+    }
+
+    .time-box {
+      display: grid;
+      min-width: 0;
+      min-height: 99px;
+      place-items: center;
+      padding: 13px 7px 11px;
+      border-radius: 11px;
+      color: #fff;
+      background: #111820;
+    }
+
+    .time-value {
+      display: block;
+      font-size: 36px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .time-label {
+      display: block;
+      margin-top: 13px;
+      color: #b5bbc6;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .timer-separator {
+      color: #111820;
+      font-size: 36px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .secure-strip {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      align-items: center;
+      gap: 18px;
+      margin-top: 77px;
+      padding: 29px 26px 30px;
+      border-top: 1px solid #d9ece7;
+      background: #fbfefd;
+      color: #7e8494;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 1.28;
+      text-align: center;
+    }
+
+    .secure-strip .shield {
+      color: #18bf8b;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* dobra 10 */
+    .faq-footer-section {
+      min-height: 2048px;
+      background: #12171e;
+    }
+
+    .faq-area {
+      min-height: 1296px;
+      padding: 60px 31px 109px;
+      background: #fff;
+    }
+
+    .faq-inner {
+      width: min(100%, 458px);
+      margin: 0 auto;
+    }
+
+    .faq-eyebrow {
+      margin: 0 0 16px;
+      color: #18bf8b;
+      font-size: 26px;
+      font-weight: 950;
+      line-height: 1.1;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .faq-title {
+      max-width: 456px;
+      margin: 0 auto;
+      color: var(--ink);
+      font-size: 49px;
+      font-weight: 950;
+      line-height: 1.08;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 22px;
+      margin-top: 72px;
+    }
+
+    .faq-item {
+      border: 1px solid #dcece7;
+      border-radius: 14px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      display: grid;
+      grid-template-columns: 1fr 20px;
+      align-items: center;
+      gap: 16px;
+      min-height: 103px;
+      padding: 24px 31px;
+      color: #171d27;
+      font-size: 25px;
+      font-weight: 950;
+      line-height: 1.28;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid #171d27;
+      border-bottom: 2px solid #171d27;
+      transform: rotate(45deg);
+      transition: transform 180ms ease;
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(225deg);
+    }
+
+    .faq-answer {
+      margin: -10px 31px 26px;
+      color: #7e8494;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .footer-area {
+      padding: 66px 32px 57px;
+      background: #12171e;
+      color: #a7acb6;
+      text-align: center;
+    }
+
+    .footer-inner {
+      width: min(100%, 458px);
+      margin: 0 auto;
+    }
+
+    .footer-notice {
+      margin: 0;
+      color: #d6d9df;
+      font-size: 23px;
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    .footer-notice strong {
+      color: #e8eaee;
+      font-weight: 950;
+    }
+
+    .footer-divider {
+      height: 1px;
+      margin: 42px 0;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      color: #fff;
+    }
+
+    .footer-brand-mark {
+      display: grid;
+      width: 54px;
+      height: 54px;
+      place-items: center;
+      border-radius: 14px;
+      color: #fff;
+      background: var(--green);
+      font-size: 28px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .footer-brand-name {
+      font-size: 30px;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .footer-email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 36px;
+      color: #a7acb6;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .mail-icon {
+      width: 25px;
+      height: 18px;
+      border: 2px solid currentColor;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .mail-icon::before,
+    .mail-icon::after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      width: 14px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    .mail-icon::before {
+      left: 1px;
+      transform: rotate(31deg);
+      transform-origin: left top;
+    }
+
+    .mail-icon::after {
+      right: 1px;
+      transform: rotate(-31deg);
+      transform-origin: right top;
+    }
+
+    .footer-copy {
+      margin: 0;
+      color: #777d88;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    @media (max-width: 520px) {
+      .fold-inner {
+        padding: 28px 24px 74px;
+      }
+
+      .hero {
+        min-height: 100vh;
+      }
+
+      .brand {
+        gap: 9px;
+        margin-left: -10px;
+        margin-bottom: 38px;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        font-size: 22px;
+      }
+
+      .brand-name {
+        font-size: 20px;
+      }
+
+      .hero-kicker {
+        font-size: clamp(15px, 4.15vw, 21px);
+      }
+
+      .hero-title {
+        font-size: clamp(48px, 12vw, 79px);
+      }
+
+      .hero-copy {
+        font-size: clamp(20px, 5.4vw, 26px);
+        margin-top: 30px;
+      }
+
+      .product-image-frame {
+        margin-top: 34px;
+        margin-bottom: 24px;
+      }
+
+      .features {
+        width: calc(100% + 48px);
+        height: 104px;
+        margin-left: 50%;
+      }
+
+      .floating-track {
+        gap: 24px;
+        animation-duration: 20s;
+      }
+
+      .floating-image-slot {
+        flex-basis: 122px;
+        height: 82px;
+      }
+
+      .floating-image-slot .asset-label {
+        font-size: 12px;
+      }
+
+      .cta {
+        min-height: 82px;
+        font-size: clamp(24px, 7vw, 32px);
+      }
+
+      .hero .cta {
+        width: min(100%, 330px);
+        min-height: 64px;
+        font-size: clamp(15px, 4.2vw, 19px);
+      }
+
+      .hero .cta svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .benefits-section {
+        min-height: auto;
+      }
+
+      .benefits-inner {
+        padding: 92px 31px 60px;
+      }
+
+      .section-eyebrow {
+        font-size: clamp(20px, 5vw, 25px);
+      }
+
+      .benefits-title {
+        font-size: clamp(36px, 9.2vw, 49px);
+      }
+
+      .benefits-subtitle {
+        font-size: clamp(21px, 5.5vw, 27px);
+      }
+
+      .benefit-card {
+        min-height: 72px;
+        font-size: clamp(16px, 4.4vw, 20px);
+      }
+
+      .budget-tags {
+        gap: 8px;
+        font-size: clamp(7px, 1.85vw, 8px);
+      }
+
+      .modules-section {
+        min-height: auto;
+      }
+
+      .modules-inner {
+        padding: 92px 24px 70px;
+      }
+
+      .module-heading {
+        font-size: clamp(34px, 8.8vw, 48px);
+      }
+
+      .module-heading + .module-card,
+      .module-heading + .module-full-image-frame {
+        margin-top: 64px;
+      }
+
+      .module-full-image-frame {
+        aspect-ratio: 574 / 420;
+        border-radius: 24px;
+      }
+
+      .module-card,
+      .module-card.card-savings {
+        grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+        min-height: 354px;
+        border-radius: 24px;
+      }
+
+      .module-content {
+        padding: 28px 0 24px 23px;
+      }
+
+      .module-title,
+      .card-savings .module-title {
+        margin-left: 0;
+        margin-bottom: 23px;
+        font-size: clamp(21px, 5.3vw, 33px);
+      }
+
+      .module-list {
+        gap: 7px;
+        font-size: clamp(9px, 2.55vw, 15px);
+      }
+
+      .module-list li {
+        gap: 6px;
+      }
+
+      .module-check {
+        width: 12px;
+        height: 12px;
+        font-size: 8px;
+      }
+
+      .module-image-frame,
+      .card-savings .module-image-frame {
+        height: 282px;
+        margin-top: 72px;
+      }
+
+      .module-spacer-heading {
+        margin-top: 214px;
+      }
+
+      .functions-section {
+        min-height: 2048px;
+      }
+
+      .functions-inner {
+        width: min(100%, 384px);
+        padding: 58px 21px 0;
+      }
+
+      .functions-title {
+        font-size: clamp(29px, 8.85vw, 34px);
+      }
+
+      .video-caption {
+        font-size: clamp(20px, 6.2vw, 24px);
+      }
+
+      .play-button {
+        width: 72px;
+        height: 72px;
+      }
+
+      .access-section {
+        min-height: 1039px;
+      }
+
+      .access-inner {
+        width: min(100%, 632px);
+        padding: 39px 38px 76px;
+      }
+
+      .access-eyebrow {
+        font-size: clamp(25px, 8.1vw, 31px);
+      }
+
+      .access-title {
+        font-size: clamp(30px, 8.7vw, 46px);
+      }
+
+      .access-copy {
+        gap: 34px;
+        font-size: clamp(19px, 5.45vw, 24px);
+      }
+
+      .access-cta {
+        width: min(100%, 330px);
+        min-height: 64px;
+        font-size: clamp(15px, 4.2vw, 19px);
+      }
+
+      .testimonials-section {
+        min-height: 2048px;
+      }
+
+      .testimonials-inner {
+        width: min(100%, 404px);
+        padding: 72px 24px 56px;
+      }
+
+      .testimonials-title {
+        font-size: clamp(32px, 9.4vw, 38px);
+      }
+
+      .testimonial-card {
+        padding: 25px 25px 26px;
+      }
+
+      .testimonial-card h3 {
+        font-size: clamp(20px, 5.7vw, 23px);
+      }
+
+      .testimonial-card p {
+        font-size: clamp(16px, 4.45vw, 18px);
+      }
+
+      .warning-bonus-section {
+        min-height: 2048px;
+      }
+
+      .warning-area {
+        padding: 4px 31px 109px;
+      }
+
+      .warning-card {
+        padding: 35px 31px 33px;
+      }
+
+      .warning-card h2 {
+        font-size: clamp(23px, 5.45vw, 28px);
+      }
+
+      .warning-card p {
+        font-size: clamp(20px, 4.9vw, 25px);
+      }
+
+      .bonus-area {
+        min-height: 1487px;
+        padding: 113px 32px 80px;
+      }
+
+      .bonus-kicker {
+        font-size: clamp(22px, 5.3vw, 27px);
+      }
+
+      .bonus-title {
+        font-size: clamp(32px, 8.4vw, 43px);
+      }
+
+      .bonus-subtitle {
+        font-size: clamp(26px, 6.65vw, 34px);
+      }
+
+      .bonus-list {
+        font-size: clamp(21px, 5.1vw, 26px);
+      }
+
+      .pricing-section {
+        min-height: 2048px;
+      }
+
+      .pricing-inner {
+        width: min(100%, 416px);
+        padding: 39px 26px 58px;
+      }
+
+      .pricing-eyebrow {
+        font-size: clamp(16px, 4.55vw, 19px);
+      }
+
+      .pricing-title {
+        font-size: clamp(32px, 9.1vw, 38px);
+      }
+
+      .purchase-badge {
+        font-size: clamp(11px, 3.35vw, 14px);
+      }
+
+      .offer-headline {
+        font-size: clamp(23px, 6.5vw, 27px);
+      }
+
+      .new-price {
+        font-size: clamp(44px, 13.2vw, 55px);
+      }
+
+      .checkout-copy strong {
+        font-size: clamp(17px, 4.8vw, 20px);
+      }
+
+      .included-list {
+        font-size: clamp(15px, 4.1vw, 17px);
+      }
+
+      .bonus-pack-section {
+        min-height: 1866px;
+        padding-bottom: 64px;
+      }
+
+      .bonus-pack-panel {
+        width: calc(100% - 52px);
+      }
+
+      .bonus-pack-content {
+        padding: 22px 24px 0;
+      }
+
+      .bonus-pack-heading {
+        font-size: clamp(25px, 7.65vw, 32px);
+      }
+
+      .extra-bonus-card {
+        grid-template-columns: 64px 1fr;
+        gap: 16px;
+        padding: 24px 20px 23px;
+      }
+
+      .extra-bonus-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        font-size: 28px;
+      }
+
+      .extra-bonus-title {
+        font-size: clamp(21px, 6.25vw, 26px);
+      }
+
+      .extra-bonus-value {
+        font-size: clamp(18px, 5.3vw, 22px);
+      }
+
+      .extra-bonus-description {
+        font-size: clamp(18px, 5.5vw, 23px);
+      }
+
+      .bonus-total {
+        font-size: clamp(21px, 6vw, 25px);
+      }
+
+      .payment-assurances {
+        font-size: clamp(20px, 5.75vw, 24px);
+      }
+
+      .timer-card {
+        padding: 47px 24px 45px;
+      }
+
+      .timer-title {
+        font-size: clamp(25px, 7.2vw, 30px);
+      }
+
+      .timer-row {
+        gap: 8px;
+      }
+
+      .time-box {
+        min-height: 99px;
+      }
+
+      .time-value {
+        font-size: clamp(29px, 8.6vw, 36px);
+      }
+
+      .time-label {
+        font-size: clamp(13px, 4vw, 17px);
+      }
+
+      .secure-strip {
+        font-size: clamp(19px, 5.5vw, 23px);
+      }
+
+      .faq-footer-section {
+        min-height: 2048px;
+      }
+
+      .faq-area {
+        min-height: 1296px;
+        padding: 60px 31px 109px;
+      }
+
+      .faq-eyebrow {
+        font-size: clamp(22px, 6.25vw, 26px);
+      }
+
+      .faq-title {
+        font-size: clamp(38px, 11.5vw, 49px);
+      }
+
+      .faq-list {
+        margin-top: 72px;
+      }
+
+      .faq-item summary {
+        min-height: 103px;
+        padding: 24px 31px;
+        font-size: clamp(20px, 5.9vw, 25px);
+      }
+
+      .footer-area {
+        padding: 66px 32px 57px;
+      }
+
+      .footer-notice {
+        font-size: clamp(19px, 5.4vw, 23px);
+      }
+
+      .footer-brand-name {
+        font-size: clamp(24px, 7.2vw, 30px);
+      }
+
+      .footer-email {
+        font-size: clamp(19px, 5.7vw, 24px);
+      }
+
+      .footer-copy {
+        font-size: clamp(17px, 4.8vw, 20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- dobra 1 -->
+    <section class="fold hero" id="dobra-1">
+      <div class="fold-inner">
+        <header class="brand" aria-label="Mis Finanzas Pro">
+          <div class="brand-mark" aria-hidden="true">$</div>
+          <div class="brand-name">Mis Finanzas Pro</div>
+        </header>
+
+        <p class="hero-kicker">
+          <span>&iquest;Sientes que el dinero desaparece</span>
+          <span>cada mes?</span>
+        </p>
+
+        <h1 class="hero-title">Plantilla de Finanzas Personales</h1>
+
+        <p class="hero-copy">
+          La forma m&aacute;s <span class="highlight">simple</span> de controlar tus ingresos y gastos,usada por miles de personas.
+        </p>
+
+        <div class="product-image-frame">
+          <img class="product-image" src="imagem01.png" alt="Vista previa de la plantilla de finanzas personales" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+          <span class="asset-label">imagem01.png</span>
+        </div>
+
+        <div class="features" aria-label="Imagens animadas de beneficios">
+          <div class="floating-track">
+            <div class="floating-image-slot">
+              <img src="imagem15.png" alt="Imagem animada 1 da dobra 1" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem15.png</span>
+            </div>
+            <div class="floating-image-slot">
+              <img src="imagem16.png" alt="Imagem animada 2 da dobra 1" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem16.png</span>
+            </div>
+            <div class="floating-image-slot">
+              <img src="imagem17.png" alt="Imagem animada 3 da dobra 1" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem17.png</span>
+            </div>
+            <div class="floating-image-slot">
+              <img src="imagem18.png" alt="Imagem animada 4 da dobra 1" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem18.png</span>
+            </div>
+            <div class="floating-image-slot">
+              <img src="imagem19.png" alt="Imagem animada 5 da dobra 1" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem19.png</span>
+            </div>
+            <div class="floating-image-slot">
+              <img src="imagem20.png" alt="Imagem animada 6 da dobra 1" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem20.png</span>
+            </div>
+
+            <div class="floating-image-slot" aria-hidden="true">
+              <img src="imagem15.png" alt="" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem15.png</span>
+            </div>
+            <div class="floating-image-slot" aria-hidden="true">
+              <img src="imagem16.png" alt="" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem16.png</span>
+            </div>
+            <div class="floating-image-slot" aria-hidden="true">
+              <img src="imagem17.png" alt="" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem17.png</span>
+            </div>
+            <div class="floating-image-slot" aria-hidden="true">
+              <img src="imagem18.png" alt="" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem18.png</span>
+            </div>
+            <div class="floating-image-slot" aria-hidden="true">
+              <img src="imagem19.png" alt="" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem19.png</span>
+            </div>
+            <div class="floating-image-slot" aria-hidden="true">
+              <img src="imagem20.png" alt="" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+              <span class="asset-label">imagem20.png</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-wrap">
+          <a class="cta" href="#oferta-produto" aria-label="Quiero la plantilla">
+            <span>QUIERO LA PLANTILLA</span>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 4v16m0 0 7-7m-7 7-7-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 2 -->
+    <section class="fold benefits-section" id="dobra-2">
+      <div class="fold-inner benefits-inner">
+        <p class="section-eyebrow">La plantilla de finanzas personales definitiva</p>
+
+        <h2 class="benefits-title">&iquest;Cu&aacute;les son los beneficios de esta plantilla?</h2>
+
+        <p class="benefits-subtitle">
+          De esta manera nos diferenciamos de todas las plantillas que hay en el mercado
+        </p>
+
+        <ul class="benefits-list" aria-label="Beneficios de la plantilla">
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Ingresos</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Gastos</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Ahorros</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Deudas</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Inversiones</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Seguimiento de gastos</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>C&aacute;lculos autom&aacute;ticos</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Gr&aacute;ficos interactivos</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Regla 50/30/20</span>
+          </li>
+          <li class="benefit-card">
+            <span class="check-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="m6 12 4 4 8-9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <span>Panel anual y mensual</span>
+          </li>
+        </ul>
+
+        <div class="budget-preview image-only">
+          <div class="budget-image-frame">
+            <img class="budget-image" src="imagem02.png" alt="Vista previa del presupuesto mensual" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+            <span class="asset-label">imagem02.png</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 3 -->
+    <section class="fold modules-section" id="dobra-3">
+      <div class="fold-inner modules-inner">
+        <h2 class="module-heading">Pago de Deudas | Bola de Nieve</h2>
+
+        <div class="module-full-image-frame">
+          <img class="module-full-image" src="imagem03.png" alt="Vista previa completa del modulo de pago de deudas" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+          <span class="asset-label">imagem03.png</span>
+        </div>
+
+        <h2 class="module-heading module-spacer-heading">Fondo de Ahorros</h2>
+
+        <div class="module-full-image-frame">
+          <img class="module-full-image" src="imagem04.png" alt="Vista previa completa del fondo de ahorros" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+          <span class="asset-label">imagem04.png</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 4 -->
+    <section class="fold functions-section" id="dobra-4">
+      <div class="fold-inner functions-inner">
+        <p class="functions-eyebrow">Descubre</p>
+        <h2 class="functions-title">TODAS LAS FUNCIONES de la plantilla de Finanzas</h2>
+        <div class="down-icons" aria-hidden="true">
+          <span>&#128071;</span>
+          <span>&#128071;</span>
+          <span>&#128071;</span>
+        </div>
+
+        <div class="video-card first-video">
+          <video src="video01.mp4" controls playsinline preload="metadata" aria-label="Video de demostracion de la plantilla en una computadora" onloadeddata="this.nextElementSibling.style.display='none'" onplay="this.closest('.video-card').classList.add('playing')" onpause="this.closest('.video-card').classList.remove('playing')" onended="this.closest('.video-card').classList.remove('playing')" onerror="this.style.visibility='hidden'"></video>
+          <span class="asset-label">video01.mp4</span>
+          <button class="play-button" type="button" aria-label="Reproducir video" onclick="const card=this.closest('.video-card'); const video=card.querySelector('video'); video.play(); card.classList.add('playing');"></button>
+        </div>
+
+        <p class="video-caption">As&iacute; funciona la plantilla &#128071;</p>
+
+        <div class="video-card second-video">
+          <video src="video02.mp4" controls playsinline preload="metadata" aria-label="Video explicando como usar la plantilla" onloadeddata="this.nextElementSibling.style.display='none'" onplay="this.closest('.video-card').classList.add('playing')" onpause="this.closest('.video-card').classList.remove('playing')" onended="this.closest('.video-card').classList.remove('playing')" onerror="this.style.visibility='hidden'"></video>
+          <span class="asset-label">video02.mp4</span>
+          <button class="play-button" type="button" aria-label="Reproducir video" onclick="const card=this.closest('.video-card'); const video=card.querySelector('video'); video.play(); card.classList.add('playing');"></button>
+        </div>
+
+        <div class="phone-image-frame">
+          <img class="phone-image" src="imagem07.png" alt="Plantilla de finanzas abierta en el celular" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+          <span class="asset-label">imagem07.png</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 5 -->
+    <section class="fold access-section" id="dobra-5">
+      <div class="fold-inner access-inner">
+        <p class="access-eyebrow">UTIL&Iacute;ZALO EN</p>
+        <h2 class="access-title">CUALQUIER PARTE</h2>
+
+        <div class="access-copy">
+          <p>La plantilla desarrollada en Google Sheets es perfecta para utilizarla en cualquier dispositivo, ya sea un smartphone, una tablet, laptop o cualquier otro.</p>
+          <p>Todo lo tendr&aacute;s de f&aacute;cil acceso para utilizarlo en cualquier momento de tu d&iacute;a.</p>
+          <p>Adem&aacute;s podr&aacute;s sincronizar todo autom&aacute;ticamente en la nube.</p>
+        </div>
+
+        <a class="access-cta" href="#oferta-produto" aria-label="Descargar ahora">
+          <span>DESCARGAR AHORA</span>
+          <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- dobra 6 -->
+    <section class="fold testimonials-section" id="dobra-6">
+      <div class="fold-inner testimonials-inner">
+        <p class="testimonials-eyebrow">TESTIMONIOS</p>
+        <h2 class="testimonials-title">Mira lo que nuestros clientes dicen</h2>
+
+        <div class="testimonial-list">
+          <article class="testimonial-card">
+            <h3>La plantilla definitiva</h3>
+            <p>Antes compr&eacute; muchas plantillas de finanzas personales, pero en todas hab&iacute;a alguna funci&oacute;n que les faltaba. En cambio esta plantilla ya ten&iacute;a todo lo que necesitaba, &iexcl;es s&uacute;per completa!</p>
+            <div class="stars" aria-label="5 estrellas">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="customer">
+              <div class="customer-avatar">
+                <img src="imagem08.png" alt="Foto de Veronica M." onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+                <span class="asset-label">imagem08.png</span>
+              </div>
+              <div>
+                <span class="customer-name">Veronica M.</span>
+                <span class="customer-date">01/05/26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <h3>Moderna y funcional</h3>
+            <p>Moderna, clara y muy funcional. Me ahorra tiempo y ya no necesito andar buscando otras plantillas.</p>
+            <div class="stars" aria-label="5 estrellas">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="customer">
+              <div class="customer-avatar">
+                <img src="imagem09.png" alt="Foto de Sebastian V." onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+                <span class="asset-label">imagem09.png</span>
+              </div>
+              <div>
+                <span class="customer-name">Sebastian V.</span>
+                <span class="customer-date">10/06/26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <h3>Dise&ntilde;o espectacular</h3>
+            <p>Esta plantilla est&aacute; muy bien dise&ntilde;ada, todo se ve muy moderno y ordenado. Me gust&oacute; mucho que pueda personalizarla a los colores que m&aacute;s me gustan.</p>
+            <div class="stars" aria-label="5 estrellas">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="customer">
+              <div class="customer-avatar">
+                <img src="imagem10.png" alt="Foto de Angela F." onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+                <span class="asset-label">imagem10.png</span>
+              </div>
+              <div>
+                <span class="customer-name">Angela F.</span>
+                <span class="customer-date">07/06/26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <h3>Muy f&aacute;cil de usar</h3>
+            <p>Me encant&oacute; el dise&ntilde;o y la facilidad de uso. Se nota que est&aacute; pensada para personas reales con problemas reales.</p>
+            <div class="stars" aria-label="5 estrellas">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="customer">
+              <div class="customer-avatar">
+                <img src="imagem11.png" alt="Foto de Nicolas A." onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+                <span class="asset-label">imagem11.png</span>
+              </div>
+              <div>
+                <span class="customer-name">Nicolas A.</span>
+                <span class="customer-date">02/07/26</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <h3>Completa para todo</h3>
+            <p>Por fin una plantilla que tiene todo lo que necesito. Orden&eacute; mis finanzas en un d&iacute;a. Vale totalmente la pena invertir en mejorar y ordenar mis finanzas.</p>
+            <div class="stars" aria-label="5 estrellas">
+              <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+            </div>
+            <div class="customer">
+              <div class="customer-avatar">
+                <img src="imagem12.png" alt="Foto de Adrian P." onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+                <span class="asset-label">imagem12.png</span>
+              </div>
+              <div>
+                <span class="customer-name">Adrian P.</span>
+                <span class="customer-date">04/07/26</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 7 -->
+    <section class="fold warning-bonus-section" id="dobra-7">
+      <div class="warning-area">
+        <div class="warning-card">
+          <h2>Aviso importante sobre este producto</h2>
+          <p>
+            Este sitio <strong>no ofrece cuentas de ahorro, pr&eacute;stamos, oportunidades de inversi&oacute;n ni asesor&iacute;a financiera.</strong>
+            Solo vendemos una <strong>plantilla de finanzas personales en formato hoja de c&aacute;lculo (archivo digital editable)</strong>
+            para que t&uacute; mismo registres y organices tus ingresos, gastos, ahorros y pagos.
+          </p>
+        </div>
+      </div>
+
+      <div class="bonus-area">
+        <div class="bonus-inner">
+          <p class="bonus-kicker">Adem&aacute;s tenemos un REGALO para ti</p>
+
+          <div class="bonus-image-frame">
+            <img class="bonus-image" src="imagem13.png" alt="Vista previa de la plantilla de control financiero" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+            <span class="asset-label">imagem13.png</span>
+          </div>
+
+          <h2 class="bonus-title">SI TIENES UN NEGOCIO, TE REGALAMOS ESTA PLANTILLA</h2>
+          <p class="bonus-subtitle">DE CONTROL FINANCIERO:</p>
+
+          <ul class="bonus-list" aria-label="Beneficios de la plantilla de control financiero">
+            <li><span class="bonus-check" aria-hidden="true">&#10003;</span><span>Registro de ingresos y egresos</span></li>
+            <li><span class="bonus-check" aria-hidden="true">&#10003;</span><span>Informes mensual y anual</span></li>
+            <li><span class="bonus-check" aria-hidden="true">&#10003;</span><span>Dashboard interactivo</span></li>
+            <li><span class="bonus-check" aria-hidden="true">&#10003;</span><span>Planificaci&oacute;n financiera</span></li>
+            <li><span class="bonus-check" aria-hidden="true">&#10003;</span><span>Rentabilidad</span></li>
+            <li><span class="bonus-check" aria-hidden="true">&#10003;</span><span>Ten el control de tu negocio con esta plantilla</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 8 -->
+    <section class="fold pricing-section" id="preco-produto" data-dobra="8">
+      <div class="fold-inner pricing-inner">
+        <p class="pricing-eyebrow">LA PLANTILLA DE FINANZAS PERSONALES DEFINITIVA</p>
+        <h2 class="pricing-title">&iexcl;Obtenla ahora mismo!</h2>
+
+        <div class="purchase-badges" aria-label="Condiciones de compra">
+          <div class="purchase-badge"><span class="purchase-icon" aria-hidden="true">&#9889;</span><span>UN SOLO PAGO</span></div>
+          <div class="purchase-badge"><span class="purchase-icon" aria-hidden="true">&#10024;</span><span>ENTREGA INMEDIATA</span></div>
+          <div class="purchase-badge"><span class="purchase-icon" aria-hidden="true">&#128737;</span><span>ACCESO DE POR VIDA</span></div>
+          <div class="purchase-badge"><span class="purchase-icon" aria-hidden="true">&#9678;</span><span>ACTUALIZACIONES GRATIS</span></div>
+          <div class="purchase-badge"><span class="purchase-icon" aria-hidden="true">&#127873;</span><span>SOPORTE PRIORITARIO</span></div>
+        </div>
+
+        <div class="pricing-product-frame">
+          <img class="pricing-product" src="imagem14.png" alt="Plantilla de finanzas personales en varios dispositivos" onload="this.nextElementSibling.style.display='none'" onerror="this.style.visibility='hidden'">
+          <span class="asset-label">imagem14.png</span>
+        </div>
+
+        <div class="offer-panel" id="oferta-produto">
+          <div class="offer-header">
+            <span class="offer-small">&#127881; OFERTA ESPECIAL POR TIEMPO LIMITADO</span>
+            <span class="offer-headline">&iexcl;Aprovecha el 91% de Descuento!</span>
+          </div>
+
+          <div class="offer-body">
+            <div class="normal-price">
+              <span class="normal-label">PRECIO NORMAL</span>
+              <span class="normal-sub">Sin la oferta</span>
+              <span class="old-price-large">$20 USD</span>
+              <span class="bonus-note">+ $60 USD en bonos</span>
+            </div>
+
+            <div class="today-price">
+              <span class="discount-badge">91% OFF</span>
+              <span class="today-label">PRECIO HOY</span>
+              <span class="old-price-small">$80 USD (plantilla + bonos)</span>
+              <span class="new-price">$6,90</span>
+              <span class="included-note">&iexcl;Todo incluido!</span>
+            </div>
+
+            <a class="checkout-cta" href="https://pay.hotmart.com/R106703553O?checkoutMode=10" aria-label="Obtener esta oferta">
+              <span class="checkout-spark" aria-hidden="true">&#10022;</span>
+              <span class="checkout-copy">
+                <strong>OBTENER ESTA OFERTA</strong>
+                <span>click aqu&iacute;</span>
+              </span>
+              <span class="checkout-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+
+            <div class="included-list-wrap">
+              <h3 class="included-title">
+                <span class="title-check" aria-hidden="true">&#10003;</span>
+                <span>Lo que incluye tu compra:</span>
+              </h3>
+
+              <ul class="included-list" aria-label="Lo que incluye tu compra">
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Plantilla completa de finanzas personales</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Sistema de presupuesto mensual autom&aacute;tico</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Calculadora de pago de deudas</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Fondo de ahorros con metas visuales</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Dashboard con todos tus indicadores</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Compatible con todos los dispositivos</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Tutoriales en video incluidos</span></li>
+                <li><span class="included-check" aria-hidden="true">&#10003;</span><span>Actualizaciones de por vida</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 9 -->
+    <section class="fold bonus-pack-section" id="dobra-9">
+      <div class="bonus-pack-panel">
+        <div class="bonus-pack-content">
+          <h2 class="bonus-pack-heading">
+            <span class="gift-icon" aria-hidden="true">&#127873;</span>
+            <span>+ 3 BONOS EXCLUSIVOS GRATIS:</span>
+          </h2>
+
+          <div class="extra-bonus-list">
+            <article class="extra-bonus-card">
+              <div class="extra-bonus-icon" aria-hidden="true">&#128214;</div>
+              <div>
+                <h3 class="extra-bonus-title">Gu&iacute;a para Librarse de las Deudas</h3>
+                <strong class="extra-bonus-value">Valor: $15 USD</strong>
+                <p class="extra-bonus-description">Estrategias probadas paso a paso para eliminar todas tus deudas de forma inteligente</p>
+              </div>
+            </article>
+
+            <article class="extra-bonus-card">
+              <div class="extra-bonus-icon" aria-hidden="true">&#9678;</div>
+              <div>
+                <h3 class="extra-bonus-title">Desaf&iacute;o de los 0 a los 10 Mil</h3>
+                <strong class="extra-bonus-value">Valor: $20 USD</strong>
+                <p class="extra-bonus-description">Plan de acci&oacute;n de 90 d&iacute;as para construir tu fondo de emergencia desde cero</p>
+              </div>
+            </article>
+
+            <article class="extra-bonus-card">
+              <div class="extra-bonus-icon" aria-hidden="true">&#127873;</div>
+              <div>
+                <h3 class="extra-bonus-title">Plantilla de Control para Negocios</h3>
+                <strong class="extra-bonus-value">Valor: $25 USD</strong>
+                <p class="extra-bonus-description">Gestiona las finanzas de tu emprendimiento con esta plantilla adicional</p>
+              </div>
+            </article>
+          </div>
+
+          <p class="bonus-total">
+            Valor total de los bonos: <span class="crossed">$60 USD</span>
+            <strong>&iexcl;GRATIS HOY!</strong>
+          </p>
+
+          <ul class="payment-assurances" aria-label="Condiciones incluidas">
+            <li><span class="assurance-check" aria-hidden="true">&#10003;</span><span>UN SOLO PAGO</span></li>
+            <li><span class="assurance-check" aria-hidden="true">&#10003;</span><span>ENTREGA INMEDIATA</span></li>
+            <li><span class="assurance-check" aria-hidden="true">&#10003;</span><span>ACCESO DE POR VIDA</span></li>
+          </ul>
+
+          <div class="timer-card">
+            <h3 class="timer-title"><span aria-hidden="true">&#9200;</span><span>Oferta por tiempo limitado</span></h3>
+            <div class="timer-row" aria-label="Contador de oferta por tiempo limitado">
+              <div class="time-box"><span class="time-value" data-countdown-minutes>10</span><span class="time-label">MIN</span></div>
+              <span class="timer-separator" aria-hidden="true">:</span>
+              <div class="time-box"><span class="time-value" data-countdown-seconds>00</span><span class="time-label">SEG</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="secure-strip">
+          <span class="shield" aria-hidden="true">&#128737;</span>
+          <span>Compra 100% segura &bull; Entrega inmediata &bull; Garant&iacute;a de satisfacci&oacute;n</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- dobra 10 -->
+    <section class="fold faq-footer-section" id="dobra-10">
+      <div class="faq-area">
+        <div class="faq-inner">
+          <p class="faq-eyebrow">PREGUNTAS FRECUENTES</p>
+          <h2 class="faq-title">&iquest;Tienes preguntas? Nosotros tenemos las respuestas</h2>
+
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>&iquest;C&oacute;mo recibir&eacute; la plantilla?</summary>
+              <p class="faq-answer">La recibir&aacute;s de forma inmediata por email despu&eacute;s de la compra, con las instrucciones para acceder y usarla.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>&iquest;Es compatible con Mac?</summary>
+              <p class="faq-answer">S&iacute;. La plantilla funciona en Google Sheets desde el navegador, por eso puedes usarla en Mac sin instalar programas extra.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>&iquest;Tienen tutoriales de uso y soporte?</summary>
+              <p class="faq-answer">S&iacute;. Incluye tutoriales en video y soporte para ayudarte a configurar y utilizar la plantilla correctamente.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>&iquest;Necesito conocimientos de Excel para usar?</summary>
+              <p class="faq-answer">No. La plantilla est&aacute; pensada para ser simple, clara y f&aacute;cil de usar aunque no tengas experiencia previa.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>&iquest;En d&oacute;nde lo podr&eacute; utilizar?</summary>
+              <p class="faq-answer">Puedes utilizarla en smartphone, tablet, laptop o computadora, siempre que tengas acceso a Google Sheets.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>&iquest;Es compatible con Windows?</summary>
+              <p class="faq-answer">S&iacute;. Funciona en Windows desde Google Sheets usando tu navegador preferido.</p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer-area">
+        <div class="footer-inner">
+          <p class="footer-notice">
+            <strong>Aviso importante sobre este producto:</strong><br>
+            Este sitio <strong>no ofrece cuentas de ahorro, pr&eacute;stamos, oportunidades de inversi&oacute;n ni asesor&iacute;a financiera.</strong>
+            Solo vendemos una <strong>plantilla de finanzas personales en formato hoja de c&aacute;lculo (archivo digital editable)</strong>
+            para que t&uacute; mismo registres y organices tus ingresos, gastos, ahorros y pagos.
+          </p>
+
+          <div class="footer-divider"></div>
+
+          <div class="footer-brand" aria-label="Mis Finanzas Pro">
+            <div class="footer-brand-mark" aria-hidden="true">$</div>
+            <div class="footer-brand-name">Mis Finanzas Pro</div>
+          </div>
+
+          <a class="footer-email" href="mailto:infomisfinanzaspro@gmail.com">
+            <span class="mail-icon" aria-hidden="true"></span>
+            <span>infomisfinanzaspro@gmail.com</span>
+          </a>
+
+          <div class="footer-divider"></div>
+
+          <p class="footer-copy">&copy; 2026 Mis Finanzas Pro. Todos los derechos reservados.</p>
+        </div>
+      </footer>
+    </section>
+  </main>
+  <script>
+    (() => {
+      const minutesEl = document.querySelector("[data-countdown-minutes]");
+      const secondsEl = document.querySelector("[data-countdown-seconds]");
+
+      if (!minutesEl || !secondsEl) {
+        return;
+      }
+
+      let remainingSeconds = 10 * 60;
+
+      const renderCountdown = () => {
+        const minutes = Math.floor(remainingSeconds / 60);
+        const seconds = remainingSeconds % 60;
+
+        minutesEl.textContent = String(minutes).padStart(2, "0");
+        secondsEl.textContent = String(seconds).padStart(2, "0");
+      };
+
+      renderCountdown();
+
+      window.setInterval(() => {
+        if (remainingSeconds > 0) {
+          remainingSeconds -= 1;
+          renderCountdown();
+        }
+      }, 1000);
+    })();
+  </script>
+</body>
+</html>
